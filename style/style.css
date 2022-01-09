@@ -1,0 +1,551 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*Globalne style tekstu */
+html{
+	scroll-behavior: smooth;
+  }
+body{
+font-family: Arial, Helvetica, sans-serif;
+color: #7F8C8D;
+line-height: 1.7;
+ height: 100%;
+}
+
+
+p{
+	margin-top: 6px;
+}
+
+h2, h3, h4, label{
+	color: #45474F;
+
+}
+
+h1{
+	font-size: 54px;
+	line-height: 1.2;
+}
+
+h2{
+	font-size: 25px;
+	margin-bottom: 48px;
+	text-transform: uppercase;
+}
+
+h1, h3, h4, strong{
+	font-weight: 600;
+}
+
+h3{
+	font-size: 18px;
+}
+
+
+/*Kolumny, kontenery, sekcje */
+
+
+@media screen and (min-width: 960px)
+{
+.col-one-third{
+	width: 33.3333%;
+	float: left;
+}
+
+.col-half{
+
+	width: 50%;
+	float: left;
+}
+
+	
+}
+
+section{
+	clear: both;
+	padding: 90px 0;
+	overflow: auto;
+}
+
+.container{
+
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	 height: auto !important;
+	min-height: 100%;
+	margin-top: 100px;
+	
+	
+}
+
+.center-text
+{
+	text-align: center;
+}
+
+/* Przyciski*/ 
+
+
+.button
+{
+    display: inline-block;
+	padding: 8px 20px;
+	margin: 16px 0;
+	text-decoration: none;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 5px;
+}
+
+.button-light
+{
+	background: #EBEBEB;
+	color: black;
+}
+
+.button-light:hover
+{
+	background: #8A8A8A;
+}
+
+.button-dark
+{
+	background: #A1D76F;
+	color: white;
+}
+
+/* Naglowek strony */
+
+.top
+{
+	height: 50px;
+	background: #353535;
+	position: fixed;
+	width: 100%;
+	
+	
+}
+
+.top a
+{
+	color: white;
+	text-decoration: none;
+}
+
+.logo 
+{
+	float: left;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 40px;
+}
+
+.main-menu{
+	float: right;
+}
+
+.main-menu li
+{
+	float: left;
+	line-height: 50px;
+	padding: 0 10px;
+}
+
+
+.banner
+{
+	color: rgb(0, 0, 0);
+	
+	padding: 350px 0;
+	background: url("../img/salon.jpg") center;
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.banner h3 
+{
+		text-shadow: 0.1em 0.1em #333
+}
+.banner h1
+{
+	text-emphasis-color: 30px;
+	    font-size: 50px;
+		position: absolute;
+		top: 18vh;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		animation: text-an 2s 1;
+	
+}
+
+/* Sekcja Intro */
+
+
+
+.intro img
+{
+	margin-bottom: 10px;
+	width: 200px;
+	height: 300px;
+}
+
+.intro h3
+{
+	color: #3e76dd;
+	margin-bottom: 10px;
+}
+
+.intro
+{
+	background-color: rgb(156, 156, 156)
+}
+
+
+/* Sekcja Promocje */
+
+.promo
+{
+	background: #C0CCFF;
+}
+
+.promo h2
+{
+	color: #FFFFFF;
+}
+
+.promo p
+{
+	color: #EEEEEE;
+}
+
+/* Sekcja Kontakt */
+
+.contact input
+{
+	margin-bottom: 16px;
+	border-radius: 2px;
+	border: 1px solid #DDDDDD;
+	padding: 8px;
+	width: 80%;
+}
+
+.contact .col-half
+{
+	margin-top: 16px;
+}
+
+.site-footer
+{
+	background: #5a5a5a; 
+	color: #FFFFFF;
+	
+	
+}
+
+
+
+/* slider menu */
+* {box-sizing: border-box;}
+
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+.jumbotron
+{
+	text-align: center;
+}
+
+a
+{
+	text-decoration: none;
+	
+}
+
+.colOfer
+{
+	float: left;
+	width: 50%;
+	
+}
+
+.colOfer img
+{
+   max-width: 80%;	
+	padding-bottom: 10%;
+}
+
+.oferText
+{
+	max-width: 50%;
+	float: left;
+	
+}
+
+.container2{
+
+	max-width: 1040px;
+	margin: 0 auto;
+}
+
+.ikonki
+{
+	float: right;
+}
+
+.ikony
+{
+	float: right;
+    width: 50px;
+	height: 50px;
+	padding-left: 5px;
+	padding-right: 5px;
+	
+}
+
+.opinie .jumbotron
+{
+	text-align: left;
+}
+#banner_cennik 
+{
+	padding:20% !important;
+}
+@keyframes move-an {
+    from{
+
+    }
+    to{
+        top: 38vh;
+    }
+}
+
+@keyframes text-an {
+    0%{
+        letter-spacing: 20px;
+    }
+}
+
+#mark_top
+{
+ 
+	
+	
+}
+#container_rez
+{
+  float: left;
+	margin-left: 10%;
+	padding-bottom: 10%;
+	padding-top: 12%;
+	
+		
+}
+#container_cal
+{
+
+	float: left;
+	padding-bottom: 10%;
+	padding-top: 10%;
+	margin-left: 10%;
+	
+		
+}
+#show_user
+{
+	float: left;
+	color: white;
+	max-width: 50%;
+	padding-left: 2%;
+	padding-top: 1%;
+}
+
+
+
+#container_user
+{
+	
+	padding-top: 10%;
+}
+
+#show_todo_table
+{
+	width: 40%;
+	
+}
+#show_todo_table th
+{
+	font-size: 1.2em;
+	
+}
+
+.info
+{
+	
+	text-align: center;
+}
+#ad_rej
+{
+	float: left;
+	padding-top: 10%;
+	padding-left: 10%;
+	
+}
+#admin_cont
+{
+	margin-left: 10%;
+	padding-top: 10%;
+	float: left;
+}
+.container_top{
+
+	max-width: 100%;
+	margin-left: 5%;
+	margin-right: 5%;
+	 height: auto !important;
+	
+}
+#zalog
+{
+	padding-top: 5%;
+	
+}
+
+#contenerLog
+
+{
+	text-align: center;
+	padding-top: 5%;
+	padding-bottom: 10%;
+}
+.rejestracja_info
+{
+	text-align: center;
+	padding-bottom: 2%;
+	
+}
+
+.arch_info 
+{
+	
+	float: left;
+	max-width: 30%;
+	color: palegoldenrod;
+}
