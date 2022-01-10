@@ -6,8 +6,9 @@
 	$_SESSION['ID_os']=$ID_os;
 	
 
+	$Typ = 0;
 
-
+$_SESSION['Typ'] = $Typ;
 
 
 	if ((!isset($_POST['login'])) || (!isset($_POST['haslo'])))
@@ -56,7 +57,7 @@
 			
 				
 				unset($_SESSION['blad']);
-				$Typ = 0;
+				$Typ = 1;
 				$_SESSION['Typ'] = $Typ;
 				$rezultat->free_result();
 				header('Location: home.php');
@@ -99,7 +100,8 @@
 				
 				
 					unset($_SESSION['blad']);
-					$Typ = 1;
+					$Typ = 2;
+				
 				$_SESSION['Typ'] = $Typ;
 				$rezultat->free_result();
 				header('Location: todo.php');
@@ -137,7 +139,7 @@
 				
 				
 					unset($_SESSION['blad']);
-					$Typ = 2;
+					$Typ = 3;
 				$_SESSION['Typ'] = $Typ;
 				$rezultat->free_result();
 				header('Location: admin.php');

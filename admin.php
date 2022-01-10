@@ -4,18 +4,31 @@
 	session_start();
 	
 	
-	if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true) && ($_SESSION['Typ'] == 0))
+	if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==false) && ($_SESSION['Typ'] == 0))
 	{
 		header('Location: index.php');
 		exit();
 	}
+   
+       else if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true) && ($_SESSION['Typ'] == 1))
+	     {
+		   
+		    header('Location: index.php');
+	      	exit();
+	    }
         
    
 
-		else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 1)))
+		else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 2)))
 		
 		{
 			header('Location: todo.php');
+		exit();
+		}
+       else if( (!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==false && ($_SESSION['Typ'] == 3)))
+		
+		{
+			header('Location: index.php');
 		exit();
 		}
 
@@ -29,11 +42,12 @@
   <html>
 	<head>
 		<meta charset="utf-8">
-			<title>Barber shop</title>
+			<title>Admin</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="style/style.css">
 		<link href="css/bootstrap-4.3.1.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lato:700,900&display=swap" rel="stylesheet">
+		<link href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 	
 		
 	
@@ -48,38 +62,31 @@
 		
 		
 		
-		
-		<!-- Naglowek strony -->
-		<header class="top">
-			<div class="container_top">
-				<div class="logo">
-					<a href="index.html"><img src="img/logo.png" alt="LOGO" width="60" height="50"></a>
-				</div>
-				<div id="show_user">
-		<?php
-	echo("witaj ".$_SESSION['Imie']."    Mail:  ".$_SESSION['Mail']);
+			<!-- Naglowek strony -->
+		<div class="menu-container">
+  <div class="menu">
+    <ul>
+		<li><a href="#">	<?php
+	echo("witaj ".$_SESSION['Imie']);
 
-	?>
-			
-			</div>
-				<div class="main-menu">
-					<ul>
-						<li>	<a href="logout.php">Wyloguj</a></li>
-						
-					</ul>				
-				</div>
-			</div>
-		</header>
+	?></a></li>
+     
+		<li>	<a href="logout.php">Wyloguj</a></li>
+       
+    </ul>
+	  
+  </div>
+</div>
+
+		
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./js/menu/script.js"></script>
 		
 
-
-			<div id="container">
-		<br>
-		<br>
-		<br>
+		
 				<h2 class="info">Panel administracyjny</h2>
 		
 	
+			<div id="container_AD">
 	
 				<div id="ad_rej">
 					<h4> Dodaj pracownika</h4>
@@ -181,7 +188,8 @@
 				
 				</div>
 				
-				<div id="admin_cont"> 
+				
+				<div class="admin_A"> 
 			<h4> Usuń konto pracownika</h4>
 	<form action="./admin/emp_del.php"  method="post">
 	
@@ -192,7 +200,7 @@
    </form>
     </div>
 				
-		<div id="admin_cont"> 		
+		<div class="admin_A"> 		
 					<h4> Zmień Hasło użytkownika</h4>
 			<p><mark>In progress</mark></p>
     
@@ -226,19 +234,18 @@
 		<input type="submit" value="Zmień" />
        
 	</form>
-				</div>
+				
 			
-	<br>
-	
-	
 	</div>
+	</div>
+				
 				<div style="clear: both"></div>
 		
 		
 
 	
 	
-		<div style="clear: both"></div>
+	
 		
 		
 		

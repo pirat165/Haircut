@@ -1,4 +1,3 @@
-
 <?php
 
 	session_start();
@@ -126,9 +125,9 @@ catch(Exception_pass $e)
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" >
 <title>Zmiana hasła</title>
-<<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="style/style.css">
 		<link href="css/bootstrap-4.3.1.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lato:700,900&display=swap" rel="stylesheet">
@@ -145,36 +144,46 @@ catch(Exception_pass $e)
 </head>
 
 <body>
-    <!-- Naglowek strony -->
-		<header class="top">
-			<div class="container_top">
-				<div class="logo">
-					<a href="index.html"><img src="img/logo.png" alt="LOGO" width="60" height="50"></a>
-				</div>
-				<div class="main-menu">
-								
-				</div>
-				
-				
-			</div>
-		</header>
-    
+	
+			<!-- Naglowek strony -->
+		<div class="menu-container">
+  <div class="menu">
+    <ul>
+		<li><a href="#">	<?php
+	echo("witaj ".$_SESSION['Imie']);
+
+	?></a></li>
+      <li><a href="index.php">Start</a></li>
+		<li>	<a href="logout.php">Wyloguj</a></li>
+       <li><a href="user.php">Moje konto</a>
+        <ul>
+         <li><a href='password_change.php'>Zmień hasło</a></li>
+        </ul>
+        </li>
+		 <li><a href="cennik.php">Cennik</a></li>
+		<li><a href="rezerwacja.php">Zarezerwuj</a></li>
+		<li><a href="#promo">Promocje</a></li>
+		<li><a href="#opinie">Opinie</a></li>
+		
+	
+    </ul>
+	  
+  </div>
+</div>
+
+		
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./js/menu/script.js"></script>
+		
 	
 	 <div id="container">
 <div id="contenerLog">
     
    
-     <div id="zalog" >
-        
-             <button onclick="location.href='home.php'" type="button">
-         Wróć do strony głównej</button>
-            
-        </div>
     
 	
     
    
-    <br />
+    <br>
     <h4> Zmień Hasło</h4>
     
 

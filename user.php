@@ -11,14 +11,14 @@
 	}
    
       
-       else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 1)))
+       else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 2)))
 		
 		{
-			header('Location: admin.php');
+			header('Location: todo.php');
 		exit();
 		}
 
-		else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 2)))
+		else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 3)))
 		
 		{
 			header('Location: admin.php');
@@ -41,6 +41,7 @@
 		<link rel="stylesheet" href="style/style.css">
 		<link href="css/bootstrap-4.3.1.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lato:700,900&display=swap" rel="stylesheet">
+		<link href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 		<script>
 		function prom()
 			{
@@ -57,48 +58,39 @@
 
 		
 		
-		
-		
-		
-		
-		
-		
-		<!-- Naglowek strony -->
-		<header class="top">
-			<div class="container_top">
-				<div class="logo">
-					<a href="index.html"><img src="img/logo.png" alt="LOGO" width="60" height="50"></a>
-				</div>
-				<div id="show_user">
-		<?php
-	echo("witaj ".$_SESSION['Imie']."    Mail:  ".$_SESSION['Mail']);
+	
+			<!-- Naglowek strony -->
+		<div class="menu-container">
+  <div class="menu">
+    <ul>
+		<li><a href="#">	<?php
+	echo("witaj ".$_SESSION['Imie']);
 
-	?>
-			
-			</div>
-				<div class="main-menu">
-					<ul>
-						<li>	<a href="logout.php">Wyloguj</a></li>
-						<li><a href='password_change.php'>Zmień hasło</a></li>
-						<li><a href="home.php">Start</a></li>
-						<li><a href="cennik.php">Cennik</a></li>
-						<li><a href="rezerwacja.php">Zarezerwuj</a></li>
-						<li><a href="#promo">Promocje</a></li>
-						<li><a href="#opinie">Opinie</a></li>
-					</ul>				
-				</div>
-			</div>
-		</header>
-<p>
-		<?php
-	echo("witaj ".$_SESSION['Imie']."    Mail:  ".$_SESSION['Mail']);
+	?></a></li>
+      <li><a href="index.php">Start</a></li>
+		<li>	<a href="logout.php">Wyloguj</a></li>
+       <li><a href="user.php">Moje konto</a>
+        <ul>
+         <li><a href='password_change.php'>Zmień hasło</a></li>
+        </ul>
+        </li>
+		 <li><a href="home.php#price_listA">Cennik</a></li>
+		<li><a href="rezerwacja.php">Zarezerwuj</a></li>
+		<li><a href="#promo">Promocje</a></li>
+		<li><a href="#opinie">Opinie</a></li>
+		
+	
+    </ul>
+	  
+  </div>
+</div>
 
-	?>
-			
-			</p>
+		
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./js/menu/script.js"></script>
+		
 
 		<!-- Banner -->
-		<section class="banner">
+		<section class="banner_user">
 			<div class="container center-text">
 				<h1 style="line-height: 130%; "><mark id="mark_top">Barber Shop Poznań </mark></h1>
 				
@@ -108,7 +100,7 @@
 
 		
 		
-		<div> 
+	
 		
 			<div class="arch_info"> 
 				<h3>Twoje aktualne wizyty:</h3>
@@ -235,7 +227,6 @@ catch(Exception $e)
 		
 		
 	
-		</div>
 		
 		<div style="clear: both"></div>
 		

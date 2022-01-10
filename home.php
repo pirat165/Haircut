@@ -11,14 +11,14 @@
 	}
    
       
-       else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 1)))
+       else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 2)))
 		
 		{
-			header('Location: admin.php');
+			header('Location: todo.php');
 		exit();
 		}
 
-		else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 2)))
+		else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 3)))
 		
 		{
 			header('Location: admin.php');
@@ -41,6 +41,7 @@
 		<link rel="stylesheet" href="style/style.css">
 		<link href="css/bootstrap-4.3.1.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lato:700,900&display=swap" rel="stylesheet">
+		<link href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 		<script>
 		function prom()
 			{
@@ -55,48 +56,38 @@
 	</head>
 	<body>
 
-		
-		
-		
-		
-		
-		
-		
-		
-		<!-- Naglowek strony -->
-		<header class="top">
-			<div class="container_top">
-				<div class="logo">
-					<a href="index.html"><img src="img/logo.png" alt="LOGO" width="60" height="50"></a>
-				</div>
-				<div id="show_user">
-		<?php
-	echo("witaj ".$_SESSION['Imie']."    Mail:  ".$_SESSION['Mail']);
 
-	?>
-			
-			</div>
-				<div class="main-menu">
-					<ul>
-						<li>	<a href="logout.php">Wyloguj</a></li>
-						<li><a href='password_change.php'>Zmień hasło</a></li>
-						<li><a href="user.php">Moje konto</a></li>
-						<li><a href="home.php">Start</a></li>
-						<li><a href="cennik.php">Cennik</a></li>
-						<li><a href="rezerwacja.php">Zarezerwuj</a></li>
-						<li><a href="#promo">Promocje</a></li>
-						<li><a href="#opinie">Opinie</a></li>
-					</ul>				
-				</div>
-			</div>
-		</header>
-<p>
-		<?php
-	echo("witaj ".$_SESSION['Imie']."    Mail:  ".$_SESSION['Mail']);
+		
+			<!-- Naglowek strony -->
+		<div class="menu-container">
+  <div class="menu">
+    <ul>
+		<li><a href="#">	<?php
+	echo("witaj ".$_SESSION['Imie']);
 
-	?>
-			
-			</p>
+	?></a></li>
+      <li><a href="index.php">Start</a></li>
+		<li>	<a href="logout.php">Wyloguj</a></li>
+       <li><a href="user.php">Moje konto</a>
+        <ul>
+         <li><a href='password_change.php'>Zmień hasło</a></li>
+        </ul>
+        </li>
+		 <li><a href="#price_listA">Cennik</a></li>
+		<li><a href="rezerwacja.php">Zarezerwuj</a></li>
+		<li><a href="#promo">Promocje</a></li>
+		<li><a href="#opinie">Opinie</a></li>
+		
+	
+    </ul>
+	  
+  </div>
+</div>
+
+		
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./js/menu/script.js"></script>
+		
+		
 
 		<!-- Banner -->
 		<section class="banner">
@@ -209,8 +200,57 @@ function showSlides() {
 	  <button class="btn btn-primary btn-lg" type="button"  onClick="prom()" >Sprawdź nasze promocje</button> 
   </p>
 </div>
+			<div id="price_listA"></div>
 		</section>
-		<!-- opinie -->
+		
+		<!-- cennik -->
+		
+		<section class="price_list">
+			<div id="price_listD">
+		
+			<h2 style="text-align: center; padding-bottom: 4%;"> Cennik</h2>
+				<hr></hr>
+			
+			
+			
+		<div class="row center-text" id="row_price">
+  <div class="col">
+   <h4>Strzyżenie </h4>
+	 <h5> 70zł</h5>
+  </div>
+  <div class="col">
+   <h4>Strzyżenie Maszynka</h4>
+	 <h5> 40zł</h5>
+  </div>
+</div>
+			<hr></hr>
+			<div class="row center-text" id="row_price">
+  <div class="col">
+   <h4>Strzyżenie Brody </h4>
+	 <h5> 60zł</h5>
+  </div>
+  <div class="col">
+   <h4>Golenie Brody</h4>
+	 <h5> 50zł</h5>
+  </div>
+</div>
+			<hr></hr>
+			<div class="row center-text" id="row_price">
+  <div class="col">
+   <h4>Farbowanie </h4>
+	 <h5> 80zł</h5>
+  </div>
+  <div class="col">
+   
+  </div>
+</div>
+	  <hr></hr>
+		
+		</div>
+		</section>
+
+
+	<!-- opinie -->
 		<div id="opinie"></div>
 		
 		<section class="opinie">

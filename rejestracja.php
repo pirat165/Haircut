@@ -132,6 +132,7 @@
 		<link rel="stylesheet" href="style/style.css">
 		<link href="css/bootstrap-4.3.1.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lato:700,900&display=swap" rel="stylesheet">
+	<link href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 	
 	<style>
 		.error
@@ -146,29 +147,26 @@
 
 <body>
 	
-		<!-- Naglowek strony -->
-		<header class="top">
-			<div class="container_top">
-				<div class="logo">
-					<a href="index.html"><img src="img/logo.png" alt="LOGO" width="60" height="50"></a>
-				</div>
-				<div class="main-menu">
-								
-				</div>
-				
-				
-			</div>
-		</header>
+		
+			<!-- Naglowek strony -->
+		<div class="menu-container">
+  <div class="menu">
+    <ul>
+		
+		<li>	<a href="index.php">Przejdź do strony logowania</a></li>
+       
+    </ul>
+	  
+  </div>
+</div>
+
+		
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./js/menu/script.js"></script>
     
-    <div id="container">
-        <div id="zalog"  >
-        
-             <button onclick="location.href='index.php'" type="button">
-         Wróć do logowania</button>
-            
-        </div>
+  
+       
 	<div id="contenerLog">
-		<h4 class="rejestracja_info"> Rejestracja </h4>
+		<h2 class="rejestracja_info"> Rejestracja </h2>
 	<form method="post">
 	
 		Imie: <br /> <input type="text" value="<?php
@@ -265,9 +263,8 @@
 	</form>
         </div>
 		
-</div>
-	</div>	<div style="clear: both"></div>
-		</div>
+
+		
 		
 
 	

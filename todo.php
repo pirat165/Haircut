@@ -4,14 +4,25 @@
 	session_start();
 	
 	
-	if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true) && ($_SESSION['Typ'] == 0))
+	if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==false) && ($_SESSION['Typ'] == 0))
 	{
 		header('Location: index.php');
 		exit();
 	}
-        
 
-		else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 2)))
+	
+        else if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==false) && ($_SESSION['Typ'] == 2))
+	{
+		header('Location: index.php');
+		exit();
+	}
+       else if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true) && ($_SESSION['Typ'] == 1))
+	{
+		header('Location: index.php');
+		exit();
+	}
+
+		else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 3)))
 		
 		{
 			header('Location: admin.php');
@@ -33,7 +44,7 @@
 		<link rel="stylesheet" href="style/style.css">
 		<link href="css/bootstrap-4.3.1.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lato:700,900&display=swap" rel="stylesheet">
-	
+	    <link href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 		
 	
 		
@@ -44,57 +55,48 @@
 		
 		
 		
-		
-		
-		
-		
-		<!-- Naglowek strony -->
-		<header class="top">
-			<div class="container_top">
-				
-				
-				<div class="logo">
-					<a href="index.html"><img src="img/logo.png" alt="LOGO" width="60" height="50"></a>
-				</div>
-				<div id="show_user">
-		<?php
-	echo("witaj ".$_SESSION['Imie']."    Mail:  ".$_SESSION['Mail']);
+			<!-- Naglowek strony -->
+		<div class="menu-container">
+  <div class="menu">
+    <ul>
+		<li><a href="#">	<?php
+	echo("witaj ".$_SESSION['Imie']);
 
-	?>
-			
-			</div>
-				<div class="main-menu">
-					<ul>
-						<li>	<a href="logout.php">Wyloguj</a></li>
-						
-					</ul>				
-				
-			</div>
-		</header>
+	?></a></li>
+     
+		<li>	<a href="logout.php">Wyloguj</a></li>
+       
+    </ul>
+	  
+  </div>
+</div>
+
+		
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./js/menu/script.js"></script>
+		
+		
 		
 
 
-			<div id="container">
-				<br>
-				<br>
-				<br>
-				<h4 class="info"> Platforma Pracownicza</h4>
-				<h5 class="info"> Zaplanowane wizyty:</h5>
+			<div class="container_AD">
+				
+				<h2 class="infoT"> Platforma Pracownicza</h2>
+				
 				
 				<div id="admin_cont">
 				
 	<form  method="post" id="date_form">
-			<label for="date_select"> <h4> Wybierz termin</h4></label>
+			<label for="date_select"> <h4> Sprawdź swój grafik</h4></label>
 		<br>
 			
 	<input type="date" name="date_select">
-		<button type="submit" class="button button-dark" >Sprawdź termin</button>
+		<button type="submit" class="button button-dark" >Sprawdź</button>
 	</form>
 	<br>
 	
 	<?php
 	require_once "connect.php";
-
+$ID_os = $_SESSION['ID_os'];
 		
 	$date_select = $_POST['date_select'];
 	echo("<br>");
@@ -113,7 +115,7 @@
 			else
 			{
 			
-			$wyswietl = $polaczenie->query("SELECT Data, Godzina, Usluga, Imie FROM reservation INNER JOIN uslugi ON reservation.ID_uslugi = uslugi.ID_uslugi INNER JOIN users ON reservation.ID_os = users.ID_os WHERE Data = '$date_select'  ORDER BY Godzina ASC  ");
+			$wyswietl = $polaczenie->query("SELECT Data, Godzina, Usluga, Imie FROM reservation INNER JOIN uslugi ON reservation.ID_uslugi = uslugi.ID_uslugi INNER JOIN users ON reservation.ID_os = users.ID_os WHERE Data = '$date_select' AND ID_emp='$ID_os'  ORDER BY Godzina ASC  ");
        if (!$wyswietl) throw new Exception($polaczenie->error);
 				
 				else{
@@ -158,7 +160,6 @@ catch(Exception $e)
 			echo '<span style="color:red;">Błąd serwera! Przepraszamy za niedogodności i prosimy o rejestrację w innym terminie!</span>';
 			echo '<br />Informacja developerska: '.$e;
 		}
-
 	
 	?>
 		

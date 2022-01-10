@@ -2,23 +2,25 @@
 <?php
 
 	session_start();
+
+
 	
 	
-	if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true) && ($_SESSION['Typ'] == 0))
+	if ((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true) && ($_SESSION['Typ'] == 1))
 	{
 		header('Location: home.php');
 		exit();
 	}
    
 
-		else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 1)))
+		else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 2)))
 		
 		{
 			header('Location: todo.php');
 		exit();
 		}
 
-       else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 2)))
+       else if( (isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true && ($_SESSION['Typ'] == 3)))
 		
 		{
 			header('Location: admin.php');
@@ -42,6 +44,7 @@
 		<link rel="stylesheet" href="style/style.css">
 		<link href="css/bootstrap-4.3.1.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lato:700,900&display=swap" rel="stylesheet">
+		<link href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 		
 		
 		<script>
@@ -60,32 +63,27 @@
 	<body>
 
 		
-		
-		
-		
-		
-		
-		
-		
 		<!-- Naglowek strony -->
-		<header class="top">
-			<div class="container_top">
-				<div class="logo">
-					<a href="index.html"><img src="img/logo.png" alt="LOGO" width="60" height="50"></a>
-				</div>
-				<div class="main-menu">
-					<ul>
-						<li><a href="#zaloguj"id="z1" >Zaloguj</a></li>
-						<li><a href='rejestracja.php'>Zarejestruj</a></li>
-						<li><a href="index.php">Start</a></li>
-						<li><a href="cennik.php">Cennik</a></li>
-						<li><a href="#rezerwacja" id="rez_logout">Zarezerwuj</a></li>
-						<li><a href="#promo">Promocje</a></li>
-						<li><a href="#opinie">Opinie</a></li>
-					</ul>				
-				</div>
-			</div>
-		</header>
+		<div class="menu-container">
+  <div class="menu">
+    <ul>
+      <li><a href="index.php">Start</a></li>
+        <li><a href="#zalogujA"id="z1" >Zaloguj</a>
+        <ul>
+          <li><a href='rejestracja.php'>Zarejestruj</a></li>
+        </ul>
+        </li>
+		 <li><a href="#price_listA">Cennik</a></li>
+		<li><a href="#rezerwacja" id="rez_logout">Zarezerwuj</a></li>
+		<li><a href="#promo">Promocje</a></li>
+		<li><a href="#opinie">Opinie</a></li>
+		
+    </ul>
+  </div>
+</div>
+
+		
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./js/menu/script.js"></script>
 		
 			<!-- Popup info  -->
 				<script>
@@ -105,10 +103,11 @@
 		<!-- Banner -->
 		<section class="banner">
 			<div class="container center-text">
-				<h1 style="line-height: 130%;"><mark id="mark_top">Barber Shop Poznań </mark></h1>
+				<h1 style="line-height: 130%; color: #FFFFFF;"><mark id="mark_top">Barber Shop Poznań </mark></h1>
 				
-				<a class="button button-light" href="#kont">Zarezerwuj termin wizyty</a>	
-			</div>			
+				<a class="button button-light " href="#kont">Zarezerwuj termin wizyty</a>	
+			</div>		
+			<div id="zalogujA"></div>
 		</section>
 
 		
@@ -150,14 +149,14 @@ z1.onclick = function() {
 		<div class="container">
 			<h2 class="center-text">O nas</h2>
 			<br>
-			<div class="col-one-third center-text">
+			<div class="col-one-third center-text ">
 				<img src="img/Adam.jpg" alt="Ikona 1">
 				<h3>Adam</h3>
 				<p>Fryzjer z 8letnim doświadczeniem, który zaskakuje pomysłami, stroni od szablonowych rozwiązań.
 					Zawsze szczery, uśmiechnięty nie bojący się nowych wyzwań.
 				</p>
 			</div>
-			<div class="col-one-third center-text">
+			<div class="col-one-third center-text shadow alert-dark">
 				<img src="img/Mateusz.jpg" alt="Ikona 1">
 				<h3>Mateusz</h3>
 				<p>Maestro fryzjerstwa i zarazem właściciel firmy. 10 lat doświadczenia, szerokie grono zaufanych klientów.
@@ -177,57 +176,27 @@ z1.onclick = function() {
 	
 		<!-- Automatyczna galeria -->
 		
+	<div id="gall_cont"> 
+<div class="homepage-hero-slider gallery">
+    <div class="photos">
+        <div class="slide block active" style="background: url(https://images.unsplash.com/photo-1532775946639-ebb276eb9a1c?ixlib=rb-0.3.5&s=b821fc70ae641c5af2bfa331ea90f17c&auto=format&fit=crop&w=1500&q=80) no-repeat center center; background-size: cover;"></div>
+        <div class="slide block" style="background: url(https://images.unsplash.com/photo-1596728325488-58c87691e9af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80) no-repeat center center; background-size: cover;"></div>
+        <div class="slide block" style="background: url(https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80) no-repeat center center; background-size: cover;"></div>
+        <div class="slide block" style="background: url(https://images.unsplash.com/photo-1533808232502-bee53575c3af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80) no-repeat center center; background-size: cover;"></div>
+</div>
+    <div class="buttons">
+        <a class="prev" href="#"><i class="fas fa-fw fa-arrow-left"></i></a>
+        <a class="next" href="#"><i class="fas fa-fw fa-arrow-right"></i></a>
+    </div>
+</div>
+		 </div>
 
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="imgSlider/galeria1.jpg" style="width:100%" alt="zdj1">
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CESDK2J7&placement=getbutterflycom" id="_carbonads_js"></script>
+<!-- partial -->
+  <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script><script  src="./gall_js/script.js"></script>
 </div>
 
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="imgSlider/oferta1.jpg" style="width:100%" alt="zdj2">
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="imgSlider/oferta2.jpg" style="width:100%" alt="zdj3">
-</div>
-
-
-<br>
-
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
 	
-	
-	<!-- skrypt obslugujacy slidera galerii -->
-	
-	<script>
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 3000); // zmiana co 3s
-}
-</script>
-
-		
 
 		<!--Promocje  -->
 			
@@ -241,11 +210,58 @@ function showSlides() {
 	  <button class="btn btn-primary btn-lg" type="button"  onClick="prom()" >Sprawdź nasze promocje</button> 
   </p>
 </div>
+			<div id="price_listA"></div>
 		</section>
-		<!-- opinie -->
 		
+		<!-- cennik -->
+		
+		<section class="price_list">
+			<div id="price_listD">
+		
+			<h2 style="text-align: center; padding-bottom: 4%;"> Cennik</h2>
+				<hr></hr>
+			
+			
+			
+		<div class="row center-text" id="row_price">
+  <div class="col">
+   <h4>Strzyżenie </h4>
+	 <h5> 70zł</h5>
+  </div>
+  <div class="col">
+   <h4>Strzyżenie Maszynka</h4>
+	 <h5> 40zł</h5>
+  </div>
+</div>
+			<hr></hr>
+			<div class="row center-text" id="row_price">
+  <div class="col">
+   <h4>Strzyżenie Brody </h4>
+	 <h5> 60zł</h5>
+  </div>
+  <div class="col">
+   <h4>Golenie Brody</h4>
+	 <h5> 50zł</h5>
+  </div>
+</div>
+			<hr></hr>
+			<div class="row center-text" id="row_price">
+  <div class="col">
+   <h4>Farbowanie </h4>
+	 <h5> 80zł</h5>
+  </div>
+  <div class="col">
+   
+  </div>
+</div>
+	  <hr></hr>
+		
+		</div>
+		</section>
 		
 	
+
+	<!-- opinie -->
 		<div id="opinie"></div>
 
 		<section class="opinie">
