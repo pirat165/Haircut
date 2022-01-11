@@ -107,7 +107,7 @@ $id_osoby = $_SESSION['ID_os'];
 <?php
 	require_once "connect.php";
 
-		
+	$date_select = "";
 	$date_select = $_POST['date_select'];
 	echo("<br>");
 	echo('Wybrany dzień: ');
