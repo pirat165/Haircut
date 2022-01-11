@@ -38,6 +38,7 @@ if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==false))
 			$wszystko_OK=false;
 			$_SESSION['e_pass2']="Podane hasła nie są identyczne!";
 		}	
+			
 try
 			{
 
@@ -48,23 +49,22 @@ $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 			}
 			else
 			{
-				//NIE DZIAŁA
+				
 				
 				//Sprawdzenie czy istnieje taki użytkownik
-				$rezultat = $polaczenie->query("SELECT ID_os, ID_emp FROM users, employee WHERE Mail='$login'");
-				$pass = $rezultat->num_rows;
+				$pass_check = $polaczenie->query("SELECT ID_emp FROM employee WHERE Mail='$login'");
+				$pass = $pass_check->num_rows;
 				if (!$pass) throw new Exception_pass($polaczenie->error);
 				
-				
-				
-				$pass_check = $polaczenie->query("Select * From users, employee Where Mail='$login''");
-					$rez = $pass_check->num_rows;
+			
 					
-					if ($rez > 0)
+					if ($pass == 1)
 						
 						{
 						
-						if ($polaczenie->query("Update users Set Haslo='$haslo1' WHERE Mail='$login'") || ("Update employee Set Haslo='$haslo1' WHERE Mail='$login'") ) 
+						
+						
+						if ($polaczenie->query("Update employee Set Haslo='$haslo1' WHERE Mail='$login'") ) 
         
 					{
 						$_SESSION['udanazmiana']=true;
@@ -84,7 +84,7 @@ $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 					{
 						throw new Exception($polaczenie->error);
 					}
-					
+				
 					
 					     }
 							

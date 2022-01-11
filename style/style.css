@@ -379,7 +379,7 @@ a
   float: left;
 	margin-left: 10%;
 	padding-bottom: 10%;
-	padding-top: 12%;
+	padding-top: 5%;
 	
 		
 }
@@ -388,7 +388,7 @@ a
 
 	float: left;
 	padding-bottom: 10%;
-	padding-top: 10%;
+	padding-top: 5%;
 	margin-left: 25%;
 	
 		
@@ -402,7 +402,13 @@ a
 	padding-top: 1%;
 }
 
-
+#contenerRej
+{
+	padding-top: 10%;
+	text-align: center;
+	
+	padding-bottom: 15%;
+}
 
 #container_user
 {
@@ -412,7 +418,7 @@ a
 
 #show_todo_table
 {
-	width: 50%;
+	width: 70%;
 		text-align: left;
 	
 }
@@ -447,7 +453,7 @@ a
 	padding-top: 5%;
 	float: left;
 	padding-bottom: 21%;
-	width: 50%;
+	width: 70%;
 
 }
 .admin_A
@@ -479,7 +485,7 @@ padding-bottom: 5%;
 
 {
 	text-align: center;
-	padding-top: 10%;
+	padding-top: 2%;
 	padding-bottom: 15%;
 }
 .rejestracja_info
@@ -499,6 +505,8 @@ padding-bottom: 5%;
 	
 	
 }
+
+
 
 .banner_user
 {

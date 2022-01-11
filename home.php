@@ -116,7 +116,7 @@
 					Zawsze szczery, uśmiechnięty nie bojący się nowych wyzwań.
 				</p>
 			</div>
-			<div class="col-one-third center-text">
+			<div class="col-one-third center-text shadow alert-dark">
 				<img src="img/Mateusz.jpg" alt="Ikona 1">
 				<h3>Mateusz</h3>
 				<p>Maestro fryzjerstwa i zarazem właściciel firmy. 10 lat doświadczenia, szerokie grono zaufanych klientów.
@@ -136,58 +136,27 @@
 	
 		<!-- Automatyczna galeria -->
 		
+	<div id="gall_cont"> 
+<div class="homepage-hero-slider gallery">
+    <div class="photos">
+        <div class="slide block active" style="background: url(https://images.unsplash.com/photo-1532775946639-ebb276eb9a1c?ixlib=rb-0.3.5&s=b821fc70ae641c5af2bfa331ea90f17c&auto=format&fit=crop&w=1500&q=80) no-repeat center center; background-size: cover;"></div>
+        <div class="slide block" style="background: url(https://images.unsplash.com/photo-1596728325488-58c87691e9af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80) no-repeat center center; background-size: cover;"></div>
+        <div class="slide block" style="background: url(https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80) no-repeat center center; background-size: cover;"></div>
+        <div class="slide block" style="background: url(https://images.unsplash.com/photo-1622288432450-277d0fef5ed6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80) no-repeat center center; background-size: cover;"></div>
+</div>
+    <div class="buttons">
+        <a class="prev" href="#"><i class="fas fa-fw fa-arrow-left"></i></a>
+        <a class="next" href="#"><i class="fas fa-fw fa-arrow-right"></i></a>
+    </div>
+</div>
+		 </div>
 
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="imgSlider/galeria1.jpg" style="width:100%" alt="zdj1">
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CESDK2J7&placement=getbutterflycom" id="_carbonads_js"></script>
+<!-- partial -->
+  <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script><script  src="./gall_js/script.js"></script>
 </div>
 
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="imgSlider/oferta1.jpg" style="width:100%" alt="zdj2">
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="imgSlider/oferta2.jpg" style="width:100%" alt="zdj3">
-</div>
-
-
-<br>
-
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
 	
-	
-	<!-- skrypt obslugujacy slidera galerii -->
-	
-	<script>
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 3000); // zmiana co 3s
-}
-</script>
-
-		
-
 		<!--Promocje  -->
 			
 		<section class="promocje" id="promo">
@@ -319,7 +288,7 @@ catch(Exception $e)
 		
 		<div class="container">
 				<h2>Ankieta na temat usługi</h2>
-				<div class="col-half">
+				<div class="col-half" >
 					
 					
 					<form action="skrypt_opinie.php" method="post" >
@@ -381,7 +350,7 @@ catch(Exception $e)
 		<!-- Stopka  -->
 		<footer class="site-footer">
 			
-			  <p>&copy; Salon Fryzjerski Mateusz </p>
+			  <p>&copy; 2022 Barber </p>
 				
 				
 			

@@ -177,7 +177,7 @@ catch(Exception $e)
 		<!-- Stopka  -->
 		<footer class="site-footer">
 			
-			  <p>&copy; Salon Fryzjerski Mateusz </p>
+			  <p>&copy; 2022 Barber </p>
 				
 				
 			

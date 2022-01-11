@@ -128,8 +128,8 @@
     zaloguj = document.getElementById('zaloguj');
     
 z1.onclick = function() {
-    zaloguj.innerHTML = "<form style='text-align:center;' action='zaloguj.php' method='post'>Login: <br /> <input type='text' name='login' /> <br />	Hasło: <br /> <input type='password' name='haslo' /> <br /><br /><input type='submit' value='Zaloguj się '/><button type='button'>Nie pamiętam hasła</button></form>";
-	 document.getElementById("zaloguj").focus();
+    zaloguj.innerHTML = "<form style='text-align:center;' action='zaloguj.php' method='post'>E-mail: <br /> <input type='text' name='login' /> <br />	Hasło: <br /> <input type='password' name='haslo' /> <br /><br /><input type='submit' value='Zaloguj się '/><button type='button'>Nie pamiętam hasła</button></form>";
+	 
 }
 		</script>
 	
@@ -182,7 +182,7 @@ z1.onclick = function() {
         <div class="slide block active" style="background: url(https://images.unsplash.com/photo-1532775946639-ebb276eb9a1c?ixlib=rb-0.3.5&s=b821fc70ae641c5af2bfa331ea90f17c&auto=format&fit=crop&w=1500&q=80) no-repeat center center; background-size: cover;"></div>
         <div class="slide block" style="background: url(https://images.unsplash.com/photo-1596728325488-58c87691e9af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80) no-repeat center center; background-size: cover;"></div>
         <div class="slide block" style="background: url(https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80) no-repeat center center; background-size: cover;"></div>
-        <div class="slide block" style="background: url(https://images.unsplash.com/photo-1533808232502-bee53575c3af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80) no-repeat center center; background-size: cover;"></div>
+        <div class="slide block" style="background: url(https://images.unsplash.com/photo-1622288432450-277d0fef5ed6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80) no-repeat center center; background-size: cover;"></div>
 </div>
     <div class="buttons">
         <a class="prev" href="#"><i class="fas fa-fw fa-arrow-left"></i></a>
@@ -335,7 +335,7 @@ catch(Exception $e)
 		<!-- Stopka  -->
 		<footer class="site-footer">
 			
-			  <p>&copy; Salon Fryzjerski Mateusz </p>
+			  <p>&copy; 2022 Barber </p>
 				
 				
 			

@@ -22,14 +22,14 @@ try
 			}
 			else  
 					{
-				//nie działa warunek
+			
 				
 				$howdy = $polaczenie->query("SELECT * FROM Calendar WHERE Data='$date' AND Godzina='$time' ");
 				$ile_howdy = $howdy->num_rows;
 				if( $ile_howdy == 1)
 				{
 					
-				$polaczenie->multi_query(" DELETE FROM Calendar WHERE Godzina='$time'; INSERT INTO reservation VALUES (NULL, '$usluga', '$id_osoby', '$pracownik', '$date', '$time'); INSERT INTO Archive VALUES (NULL, '$date', '$time', '$pracownik'); INSERT INTO Todo VALUES (NULL, '$pracownik' ,'$date', '$time');"); // OK
+				$polaczenie->multi_query(" DELETE FROM Calendar WHERE Godzina='$time'; INSERT INTO reservation VALUES (NULL, '$usluga', '$id_osoby', '$pracownik', '$date', '$time'); INSERT INTO Archive VALUES (NULL, '$date', '$time', '$pracownik');"); // OK
 while ($polaczenie->next_result()) {;} 
 			
 		echo("<script>
@@ -42,19 +42,7 @@ while ($polaczenie->next_result()) {;}
   
 		
 	</script>");
-					
-					
-    $to      = 'mireczek1104@wp.pl';
-    $subject = 'BarberShop rezerwacja wizyty';
-    $message = 'Dziękujemy za rezerwację wizyty w dniu: '.$date.' o godzinie: '.$time;
-    $headers = 'From: barbershop.student@gmail.com'       . "\r\n" .
-                 'Reply-To: mireczek1104@wp.pl' . "\r\n" .
-                 'X-Mailer: PHP/' . phpversion();
-
-    mail($to, $subject, $message, $headers);
-
-					
-				
+	
 					}
 				
 				else

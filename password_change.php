@@ -160,10 +160,10 @@ catch(Exception_pass $e)
          <li><a href='password_change.php'>Zmień hasło</a></li>
         </ul>
         </li>
-		 <li><a href="cennik.php">Cennik</a></li>
+		 <li><a href="home.php#price_listA">Cennik</a></li>
 		<li><a href="rezerwacja.php">Zarezerwuj</a></li>
-		<li><a href="#promo">Promocje</a></li>
-		<li><a href="#opinie">Opinie</a></li>
+		<li><a href="home.php#promo">Promocje</a></li>
+		<li><a href="home.php#opinie">Opinie</a></li>
 		
 	
     </ul>
@@ -173,7 +173,15 @@ catch(Exception_pass $e)
 
 		
  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./js/menu/script.js"></script>
-		
+		<!-- Banner -->
+		<section class="banner_user">
+			<div class="container center-text">
+				<h1 style="line-height: 130%; "><mark id="mark_top">Barber Shop Poznań </mark></h1>
+				
+				<a class="button button-light" href="rezerwacja.php">Zarezerwuj termin wizyty</a>	
+			</div>			
+		</section>
+
 	
 	 <div id="container">
 <div id="contenerLog">
@@ -218,7 +226,7 @@ catch(Exception_pass $e)
     
 
 </div>
-	</div>	<div style="clear: both"></div>
+	
 		</div>
 		
 
@@ -232,7 +240,7 @@ catch(Exception_pass $e)
 		<!-- Stopka  -->
 		<footer class="site-footer">
 			
-			  <p>&copy; Salon Fryzjerski Mateusz </p>
+			  <p>&copy; 2022 Barber </p>
 				
 				
 			

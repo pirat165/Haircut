@@ -201,8 +201,7 @@
     </div>
 				
 		<div class="admin_A"> 		
-					<h4> Zmień Hasło użytkownika</h4>
-			<p><mark>In progress</mark></p>
+					<h4> Zmień Hasło pracownika</h4>
     
 
 
@@ -253,7 +252,7 @@
 		<!-- Stopka  -->
 		<footer class="site-footer">
 			
-			  <p>&copy; Salon Fryzjerski Mateusz </p>
+			  <p>&copy; 2022 Barber </p>
 				
 				
 			

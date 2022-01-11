@@ -65,8 +65,8 @@ $id_osoby = $_SESSION['ID_os'];
         </li>
 		 <li><a href="home.php#price_listA">Cennik</a></li>
 		<li><a href="rezerwacja.php">Zarezerwuj</a></li>
-		<li><a href="#promo">Promocje</a></li>
-		<li><a href="#opinie">Opinie</a></li>
+		<li><a href="home.php#promo">Promocje</a></li>
+		<li><a href="home.php#opinie">Opinie</a></li>
 		
 	
     </ul>
@@ -79,12 +79,18 @@ $id_osoby = $_SESSION['ID_os'];
 		
 		
 	
-<br>
+
+		<!-- Banner -->
+		<section class="banner_user">
+			<div class="container center-text">
+				<h1 style="line-height: 130%; "><mark id="mark_top">Zarezerwuj wizytę </mark></h1>
+			
+			</div>			
+		</section>
 		
-<div id="container">
+  <div id="container">
 		
-	<br>
-	<h2 class="info"> Zarezerwuj wizytę w wolnym terminie</h2>
+
 		
 		<div id="container_cal">
 	<form method="post" id="date_form">
@@ -238,7 +244,7 @@ catch(Exception $e)
 		<footer class="site-footer">
 			
 			
-			  <p>&copy; Salon Fryzjerski Mateusz </p>
+			  <p>&copy; 2022 Barber </p>
 				
 				
 			

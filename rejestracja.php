@@ -165,7 +165,7 @@
     
   
        
-	<div id="contenerLog">
+	<div id="contenerRej">
 		<h2 class="rejestracja_info"> Rejestracja </h2>
 	<form method="post">
 	
@@ -277,7 +277,7 @@
 		<!-- Stopka  -->
 		<footer class="site-footer">
 			
-			  <p>&copy; Salon Fryzjerski Mateusz </p>
+			  <p>&copy; 2022 Barber </p>
 				
 				
 			

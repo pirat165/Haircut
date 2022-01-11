@@ -45,8 +45,16 @@ try
 			else if ($polaczenie->query("DELETE FROM employee WHERE Mail = '$AD_del'") ) 
         
 					{
-						echo("Usunięto pracownika z bazy");
-			echo("<A href='../admin.php'>Wróc do poprzedniej strony</A>");
+						echo("<script>
+	
+		if (confirm('Usunięto pracownika: ".$AD_del."')) {
+  window.open('../admin.php', '_self');
+} else {
+  window.open('../admin.php', '_self');
+}
+  
+		
+	</script>");
 				
 					}
 	

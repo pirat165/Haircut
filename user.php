@@ -76,8 +76,8 @@
         </li>
 		 <li><a href="home.php#price_listA">Cennik</a></li>
 		<li><a href="rezerwacja.php">Zarezerwuj</a></li>
-		<li><a href="#promo">Promocje</a></li>
-		<li><a href="#opinie">Opinie</a></li>
+		<li><a href="home.php#promo">Promocje</a></li>
+		<li><a href="home.php#opinie">Opinie</a></li>
 		
 	
     </ul>
@@ -138,7 +138,6 @@
 						echo($row[2]);
 							  echo("</p></hr>");
 							 
-							//Poprawić HR
 						 }
 				}
 					
@@ -198,7 +197,6 @@ catch(Exception $e)
 						echo($row[2]);
 							  echo("</p></hr>");
 							 
-							//Poprawić HR
 						 }
 				}
 					
@@ -215,9 +213,9 @@ catch(Exception $e)
 				
 		?>
 			
-		
+		</div>
 			
-</div>
+
 		
 
 		
@@ -232,9 +230,9 @@ catch(Exception $e)
 		
 
 		<!-- Stopka  -->
-		<footer class="site-footer">
+		<footer class="site-footer" style="margin-top: 16%;">
 			
-			  <p>&copy; Salon Fryzjerski Mateusz </p>
+			  <p>&copy; 2022 Barber </p>
 				
 				
 			
