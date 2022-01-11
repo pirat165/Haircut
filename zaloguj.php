@@ -2,6 +2,8 @@
 
 
 	session_start();
+    error_reporting(~E_WARNING & ~E_NOTICE);
+
 	$_SESSION['Mail']=$Mail;
 	$_SESSION['ID_os']=$ID_os;
 	

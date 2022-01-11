@@ -1,7 +1,8 @@
 <?php
 
 	session_start();
-	
+	error_reporting(~E_WARNING & ~E_NOTICE);
+
 	
 if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==false))
 	{

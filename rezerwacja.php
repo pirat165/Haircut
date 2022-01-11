@@ -2,7 +2,7 @@
 <?php
 
 	session_start();
-
+error_reporting(~E_WARNING & ~E_NOTICE);
 	
 	if ((!isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==false && ($_SESSION['Typ'] == 0)))
 	{
@@ -107,7 +107,7 @@ $id_osoby = $_SESSION['ID_os'];
 <?php
 	require_once "connect.php";
 
-	$date_select = "";
+		
 	$date_select = $_POST['date_select'];
 	echo("<br>");
 	echo('Wybrany dzień: ');
@@ -130,7 +130,7 @@ $id_osoby = $_SESSION['ID_os'];
 				
 				else{
 					 echo(" <br> ");
-					echo("wolne terniny: ");
+					echo("wolne terminy: ");
 					 echo(" <br> ");
 					 while ( $row = mysqli_fetch_row($wyswietl) ) 
 						 {
