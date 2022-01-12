@@ -243,7 +243,7 @@ z1.onclick = function() {
             echo( "    Recenzja:  " );
 
             echo( $row[ 2 ] );
-            echo( "</p></hr" );
+            echo( "</p></hr>" );
 
             
           }

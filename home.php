@@ -212,9 +212,10 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
             echo( "    Recenzja:  " );
 
             echo( $row[ 2 ] );
-            echo( "</p>" );
+            echo( "</p></hr>" );
 
-            //Poprawić HR
+         
+         
           }
         }
 
