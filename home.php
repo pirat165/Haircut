@@ -118,7 +118,7 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
       <div class="buttons"> <a class="prev" href="#"><i class="fas fa-fw fa-arrow-left"></i></a> <a class="next" href="#"><i class="fas fa-fw fa-arrow-right"></i></a> </div>
     </div>
   </div>
-  <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CESDK2J7&placement=getbutterflycom" id="_carbonads_js"></script> 
+  
   <!-- partial --> 
   <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script><script  src="./gall_js/script.js"></script> 
 </div>
