@@ -251,7 +251,7 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
       </select>
       <br>
       <br>
-      <label for="recenzja"> <strong>Krótka opionia</strong> </label>
+      <label for="recenzja"> <strong>Krótka opinia</strong> </label>
       <br>
       <textarea name="recenzja" cols="50" rows="10"  >Podobała się obsługa?</textarea>
       <br>
