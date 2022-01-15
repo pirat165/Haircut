@@ -128,6 +128,7 @@ if ( isset( $_POST[ 'old_password' ] ) ) {
       <li> <a href="logout.php">Wyloguj</a></li>
       <li><a href="user.php">Moje konto</a>
         <ul>
+			<li><a href='arch.php'>Archiwum</a></li>
           <li><a href='password_change.php'>Zmień hasło</a></li>
         </ul>
       </li>

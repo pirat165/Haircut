@@ -49,6 +49,7 @@ $id_osoby = $_SESSION[ 'ID_os' ];
       <li> <a href="logout.php">Wyloguj</a></li>
       <li><a href="user.php">Moje konto</a>
         <ul>
+			<li><a href='arch.php'>Archiwum</a></li>
           <li><a href='password_change.php'>Zmień hasło</a></li>
         </ul>
       </li>
@@ -92,7 +93,7 @@ $id_osoby = $_SESSION[ 'ID_os' ];
         throw new Exception( mysqli_connect_errno() );
       } else {
 
-        $wyswietl = $polaczenie->query( "SELECT Data, Godzina FROM Calendar WHERE Data = '$date_select' " );
+        $wyswietl = $polaczenie->query( "SELECT Data, Godzina FROM Calendar WHERE Data = '$date_select' ORDER BY Godzina ASC" );
         if ( !$wyswietl ) throw new Exception( $polaczenie->error );
 
         else {

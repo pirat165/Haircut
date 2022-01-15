@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Czas generowania: 11 Sty 2022, 21:35
+-- Czas generowania: 11 Sty 2022, 21:40
 -- Wersja serwera: 5.7.26
 -- Wersja PHP: 7.4.2
 
@@ -68,7 +68,8 @@ INSERT INTO `Archive` (`ID_arch`, `Data`, `Godzina`, `ID_emp`) VALUES
 (14, '2022-01-18', '11:00:00', 4),
 (15, '2022-01-18', '17:00:00', 2),
 (16, '2022-01-18', '18:00:00', 2),
-(17, '2022-01-20', '17:30:00', 4);
+(17, '2022-01-20', '17:30:00', 4),
+(18, '2022-01-20', '14:30:00', 2);
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,6 @@ INSERT INTO `Calendar` (`ID_cal`, `Data`, `Godzina`) VALUES
 (28, '2022-01-19', '13:00:00'),
 (29, '2022-01-19', '13:30:00'),
 (30, '2022-01-19', '14:00:00'),
-(31, '2022-01-19', '14:30:00'),
 (32, '2022-01-19', '15:00:00'),
 (33, '2022-01-19', '15:30:00'),
 (39, '2022-01-19', '18:30:00'),
@@ -109,7 +109,6 @@ INSERT INTO `Calendar` (`ID_cal`, `Data`, `Godzina`) VALUES
 (48, '2022-01-20', '13:00:00'),
 (49, '2022-01-20', '13:30:00'),
 (50, '2022-01-20', '14:00:00'),
-(51, '2022-01-20', '14:30:00'),
 (52, '2022-01-20', '15:00:00'),
 (53, '2022-01-20', '15:30:00'),
 (59, '2022-01-20', '18:30:00'),
@@ -122,7 +121,6 @@ INSERT INTO `Calendar` (`ID_cal`, `Data`, `Godzina`) VALUES
 (68, '2022-02-20', '13:00:00'),
 (69, '2022-02-20', '13:30:00'),
 (70, '2022-02-20', '14:00:00'),
-(71, '2022-02-20', '14:30:00'),
 (72, '2022-02-20', '15:00:00'),
 (73, '2022-02-20', '15:30:00'),
 (79, '2022-02-20', '18:30:00'),
@@ -135,7 +133,6 @@ INSERT INTO `Calendar` (`ID_cal`, `Data`, `Godzina`) VALUES
 (88, '2022-02-21', '13:00:00'),
 (89, '2022-02-21', '13:30:00'),
 (90, '2022-02-21', '14:00:00'),
-(91, '2022-02-21', '14:30:00'),
 (92, '2022-02-21', '15:00:00'),
 (93, '2022-02-21', '15:30:00'),
 (99, '2022-02-21', '18:30:00');
@@ -226,45 +223,8 @@ INSERT INTO `reservation` (`ID_reservation`, `ID_uslugi`, `ID_os`, `ID_emp`, `Da
 (34, 5, 2, 4, '2022-01-18', '11:00:00'),
 (35, 1, 2, 2, '2022-01-18', '17:00:00'),
 (36, 3, 4, 2, '2022-01-18', '18:00:00'),
-(37, 1, 5, 4, '2022-01-20', '17:30:00');
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `Todo`
---
-
-CREATE TABLE `Todo` (
-  `ID_todo` int(11) NOT NULL,
-  `ID_emp` int(11) NOT NULL,
-  `Data` date NOT NULL,
-  `Godzina` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Zrzut danych tabeli `Todo`
---
-
-INSERT INTO `Todo` (`ID_todo`, `ID_emp`, `Data`, `Godzina`) VALUES
-(1, 4, '2022-01-18', '13:30:00'),
-(2, 2, '2022-01-18', '11:30:00'),
-(3, 2, '2022-01-18', '14:30:00'),
-(4, 2, '2022-01-18', '15:30:00'),
-(5, 2, '2022-01-18', '18:30:00'),
-(6, 3, '2022-01-18', '18:30:00'),
-(7, 3, '2022-01-09', '09:30:00'),
-(8, 4, '2022-01-30', '09:30:00'),
-(9, 2, '2022-01-18', '16:30:00'),
-(10, 2, '2022-01-18', '14:00:00'),
-(11, 3, '2022-01-18', '13:00:00'),
-(12, 3, '2022-01-18', '12:30:00'),
-(13, 4, '2022-01-18', '16:00:00'),
-(14, 4, '2022-01-19', '16:30:00'),
-(15, 3, '2022-01-20', '10:30:00'),
-(16, 4, '2022-01-18', '11:00:00'),
-(17, 2, '2022-01-18', '17:00:00'),
-(18, 2, '2022-01-18', '18:00:00'),
-(19, 4, '2022-01-20', '17:30:00');
+(37, 1, 5, 4, '2022-01-20', '17:30:00'),
+(38, 1, 4, 2, '2022-01-20', '14:30:00');
 
 -- --------------------------------------------------------
 
@@ -361,13 +321,6 @@ ALTER TABLE `reservation`
   ADD KEY `ID_emp` (`ID_emp`);
 
 --
--- Indeksy dla tabeli `Todo`
---
-ALTER TABLE `Todo`
-  ADD PRIMARY KEY (`ID_todo`),
-  ADD KEY `ID_os` (`ID_emp`);
-
---
 -- Indeksy dla tabeli `users`
 --
 ALTER TABLE `users`
@@ -393,7 +346,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT dla tabeli `Archive`
 --
 ALTER TABLE `Archive`
-  MODIFY `ID_arch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID_arch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT dla tabeli `Calendar`
@@ -417,13 +370,7 @@ ALTER TABLE `Opinions`
 -- AUTO_INCREMENT dla tabeli `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `ID_reservation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
-
---
--- AUTO_INCREMENT dla tabeli `Todo`
---
-ALTER TABLE `Todo`
-  MODIFY `ID_todo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID_reservation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
@@ -448,9 +395,3 @@ ALTER TABLE `reservation`
   ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`ID_os`) REFERENCES `users` (`ID_os`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `reservation_ibfk_3` FOREIGN KEY (`ID_uslugi`) REFERENCES `uslugi` (`ID_uslugi`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `reservation_ibfk_4` FOREIGN KEY (`ID_emp`) REFERENCES `employee` (`ID_emp`);
-
---
--- Ograniczenia dla tabeli `Todo`
---
-ALTER TABLE `Todo`
-  ADD CONSTRAINT `todo_ibfk_3` FOREIGN KEY (`ID_emp`) REFERENCES `employee` (`ID_emp`) ON DELETE NO ACTION ON UPDATE CASCADE;

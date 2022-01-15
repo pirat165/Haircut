@@ -26,7 +26,7 @@ try {
     $ile_howdy = $howdy->num_rows;
     if ( $ile_howdy == 1 ) {
 
-      $polaczenie->multi_query( " DELETE FROM Calendar WHERE Godzina='$time'; INSERT INTO reservation VALUES (NULL, '$usluga', '$id_osoby', '$pracownik', '$date', '$time'); INSERT INTO Archive VALUES (NULL, '$date', '$time', '$pracownik');" ); // OK
+      $polaczenie->multi_query( " DELETE FROM Calendar WHERE Godzina='$time'; INSERT INTO reservation VALUES (NULL, '$usluga', '$id_osoby', '$pracownik', '$date', '$time', 'Aktywne'); INSERT INTO Archive VALUES (NULL, '$date', '$time', '$pracownik');" ); // OK
       while ( $polaczenie->next_result() ) {;
       }
 
@@ -40,8 +40,25 @@ try {
   
 		
 	</script>" );
+		
+		
+		//Mailing, będzie aktywny po zakupie serwera
+		
+		
+		/*
+		   $header = "From: barbershop@mail.com \nContent-Type:".
+             ' text/plain;charset="UTF-8"'.
+             "\nContent-Transfer-Encoding: 8bit";
+   $to = $Mail;
+   $subject = "Rezerwacja wizyty BarberShop";
+   $message = "Dziękujemy za rezerwacji wizyty dnia: ".$date." o godzinie: ".$time." Pracownik obsługujący: ".$pracownik;
+   mail($to, $subject, $message, $header);
+		
+		*/
+		
 
-    } else {
+    }
+	  else {
       echo( "<script>
 	
 		if (confirm('Przepraszamy, termin " . "dnia " . $date . " o godzinie " . $time . " jest już zajęty :(" . "')) {

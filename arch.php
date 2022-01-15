@@ -57,7 +57,9 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
       <li> <a href="logout.php">Wyloguj</a></li>
       <li><a href="user.php">Moje konto</a>
         <ul>
-			<li><a href='arch.php'>Archiwum</a></li>
+
+		   <li><a href='arch.php'>Archiwum</a></li>
+
           <li><a href='password_change.php'>Zmień hasło</a></li>
         </ul>
       </li>
@@ -78,12 +80,9 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
     </h1>
     <a class="button button-light" href="rezerwacja.php">Zarezerwuj termin wizyty</a> </div>
 </section>
-	
-	
-	<div class="container"> 
-	
-<div class="akt_info">
-  <h3>Twoje aktualne wizyty:</h3>
+
+<div class="arch_info">
+  <h3>Historia wizyt:</h3>
   <?php
   date_default_timezone_set( "Poland" );
   $today_date = date( "Y-m-d" );
@@ -96,28 +95,21 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
       throw new Exception( mysqli_connect_errno() );
     } else {
 
-      $wyswietl = $polaczenie->query( "SELECT ID_reservation, Usluga, Data, Godzina, Status FROM reservation INNER JOIN uslugi ON reservation.ID_uslugi = uslugi.ID_uslugi WHERE ID_os='$_SESSION[ID_os]' AND Data >= '$today_date'" );
+      $wyswietl = $polaczenie->query( "SELECT Usluga, Data, Godzina FROM reservation INNER JOIN uslugi ON reservation.ID_uslugi = uslugi.ID_uslugi WHERE ID_os='$_SESSION[ID_os]'" );
       if ( !$wyswietl ) throw new Exception( $polaczenie->error );
 
       else {
 
         while ( $row = mysqli_fetch_row( $wyswietl ) ) {
-          echo( "<hr class='my-4'> <p>ID: " );
+          echo( "<hr class='my-4'> <p>Usługa: " );
           echo( $row[ 0 ] );
-			
-		  echo( "    Usługa: " );
-          echo( $row[ 1 ] );
 
           echo( "    Data:  " );
-          echo( "$row[2]" );
+          echo( "$row[1]" );
 
           echo( "    Godzina:  " );
 
-          echo( $row[ 3 ] );
-			
-			echo( "    Status: :  " );
-          echo( "$row[4]" );
-			
+          echo( $row[ 2 ] );
           echo( "</p></hr>" );
 
         }
@@ -133,23 +125,6 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
 
   ?>
 </div>
-<div class="usr_anul_wiz">
-   
-
-	  <form  method="post" action="usr_del_res.php" id="del_res">
-		   <h3> Anuluj wizytę </h3>
-		  <h6>ID wizyty</h6>
-		  <input type="number" name="form_id_wiz" required>
-		  <br>
-		   <br>
-		  <input type="checkbox" required>
-		 
-		  <p> Potwierdzenie anulowania</p>
-		   <button type="submit" class="button button-dark" >Anuluj</button>
-	  </form>
-	 
-</div>
-		</div>
 <div style="clear: both"></div>
 
 <!-- Stopka  -->

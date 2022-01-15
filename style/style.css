@@ -193,10 +193,11 @@ section {
   }
 }
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 450px) {
   .text {
     font-size: 11px
   }
+
 }
 .jumbotron {
   text-align: center;
@@ -282,7 +283,7 @@ a {
   padding-top: 10%;
 }
 #show_todo_table {
-  width: 70%;
+  width: 130%;
   text-align: left;
 }
 #show_todo_table th {
@@ -302,12 +303,43 @@ a {
   padding-left: 20%;
   padding-bottom: 5%;
 }
+.del_res
+{
+	float: left;
+	margin-left: 20%;
+
+}
+
+.del_res h6
+{
+	
+	margin-top: 15%;
+
+}
+
+.arch_info
+{
+	padding-top: 5%;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	
+}
+
+
 #admin_cont {
-  margin-left: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
   padding-top: 5%;
   float: left;
   padding-bottom: 21%;
-  width: 70%;
+  width: 90%;
+}
+.todo_cal
+{
+	float: left;
+	margin-left: 10%;
 }
 .admin_A {
   margin-left: 10%;
@@ -333,12 +365,27 @@ a {
   text-align: center;
   padding-bottom: 2%;
 }
-.arch_info {
+.usr_anul_wiz {
+	
   float: left;
   max-width: 30%;
-  padding-top: 5%;
-  margin-left: 10%;
+  
+  margin-left: 15%;
 }
+
+.usr_anul_wiz h6
+{
+  margin-top: 15%;
+}
+
+
+.akt_info
+{
+	float: left;
+	 margin-left: 5%;
+}
+
+
 .banner_user {
   color: rgb(0, 0, 0);
   background: url("../img/salon.jpg") center;

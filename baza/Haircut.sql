@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Czas generowania: 11 Sty 2022, 21:40
+-- Czas generowania: 15 Sty 2022, 13:57
 -- Wersja serwera: 5.7.26
 -- Wersja PHP: 7.4.2
 
@@ -69,7 +69,8 @@ INSERT INTO `Archive` (`ID_arch`, `Data`, `Godzina`, `ID_emp`) VALUES
 (15, '2022-01-18', '17:00:00', 2),
 (16, '2022-01-18', '18:00:00', 2),
 (17, '2022-01-20', '17:30:00', 4),
-(18, '2022-01-20', '14:30:00', 2);
+(18, '2022-01-20', '14:30:00', 2),
+(19, '2022-01-19', '16:30:00', 2);
 
 -- --------------------------------------------------------
 
@@ -135,7 +136,9 @@ INSERT INTO `Calendar` (`ID_cal`, `Data`, `Godzina`) VALUES
 (90, '2022-02-21', '14:00:00'),
 (92, '2022-02-21', '15:00:00'),
 (93, '2022-02-21', '15:30:00'),
-(99, '2022-02-21', '18:30:00');
+(99, '2022-02-21', '18:30:00'),
+(100, '2022-01-18', '17:00:00'),
+(101, '2022-01-20', '10:30:00');
 
 -- --------------------------------------------------------
 
@@ -159,8 +162,7 @@ CREATE TABLE `employee` (
 INSERT INTO `employee` (`ID_emp`, `Nazwisko`, `Imie`, `Mail`, `Telefon`, `Haslo`) VALUES
 (2, 'Pracownik_testowy1', 'Adam', 'adi12@wp.pl', '332112442', '12345678'),
 (3, 'Pracownik_testowy2', 'Mateusz', 'mateusz11@wp.pl', '123321231', '12345678'),
-(4, 'Pracownik_testowy3', 'Sandra', 'sanderka98@gmail.com', '667876345', '12345678'),
-(6, 'test', 'szybki', 'sztest@wp.pl', '123123123', '12345678');
+(4, 'Pracownik_testowy3', 'Sandra', 'sanderka98@gmail.com', '667876345', '12345678');
 
 -- --------------------------------------------------------
 
@@ -188,7 +190,8 @@ INSERT INTO `Opinions` (`ID_opini`, `ID_os`, `Ocena`, `Opinia`) VALUES
 (6, 2, 5, 'Fajny lokal'),
 (7, 2, 9, 'Super'),
 (8, 2, 10, 'Było super, polecam!'),
-(9, 4, 10, 'Świetna obsługa, czysty lokal -> zadowolony klient');
+(9, 4, 10, 'Świetna obsługa, czysty lokal -> zadowolony klient'),
+(11, 5, 10, 'Super obsługa, piękne fryzury. Jestem bardzo zadowolony');
 
 -- --------------------------------------------------------
 
@@ -202,29 +205,29 @@ CREATE TABLE `reservation` (
   `ID_os` int(11) NOT NULL,
   `ID_emp` int(11) NOT NULL,
   `Data` date NOT NULL,
-  `Godzina` time NOT NULL
+  `Godzina` time NOT NULL,
+  `Status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Zrzut danych tabeli `reservation`
 --
 
-INSERT INTO `reservation` (`ID_reservation`, `ID_uslugi`, `ID_os`, `ID_emp`, `Data`, `Godzina`) VALUES
-(2, 1, 2, 2, '2021-12-15', '12:00:00'),
-(3, 2, 2, 2, '2021-12-15', '12:00:00'),
-(4, 2, 2, 2, '2021-12-15', '15:00:00'),
-(27, 2, 3, 4, '2022-01-18', '13:30:00'),
-(28, 1, 2, 2, '2022-01-18', '11:30:00'),
-(29, 2, 2, 2, '2022-01-10', '18:00:00'),
-(30, 4, 3, 4, '2021-12-15', '15:30:00'),
-(31, 1, 2, 4, '2022-01-18', '16:00:00'),
-(32, 2, 2, 4, '2022-01-19', '16:30:00'),
-(33, 4, 2, 3, '2022-01-20', '10:30:00'),
-(34, 5, 2, 4, '2022-01-18', '11:00:00'),
-(35, 1, 2, 2, '2022-01-18', '17:00:00'),
-(36, 3, 4, 2, '2022-01-18', '18:00:00'),
-(37, 1, 5, 4, '2022-01-20', '17:30:00'),
-(38, 1, 4, 2, '2022-01-20', '14:30:00');
+INSERT INTO `reservation` (`ID_reservation`, `ID_uslugi`, `ID_os`, `ID_emp`, `Data`, `Godzina`, `Status`) VALUES
+(3, 2, 2, 2, '2021-12-15', '12:00:00', 'Aktywne'),
+(4, 2, 2, 2, '2021-12-15', '15:00:00', 'Aktywne'),
+(27, 2, 3, 4, '2022-01-18', '13:30:00', 'Aktywne'),
+(29, 2, 2, 2, '2022-01-10', '18:00:00', 'Aktywne'),
+(30, 4, 3, 4, '2021-12-15', '15:30:00', 'Aktywne'),
+(31, 1, 2, 4, '2022-01-18', '16:00:00', 'Aktywne'),
+(32, 2, 2, 4, '2022-01-19', '16:30:00', 'Anulowano'),
+(33, 4, 2, 3, '2022-01-20', '10:30:00', 'Anulowano'),
+(34, 5, 2, 4, '2022-01-18', '11:00:00', 'Aktywne'),
+(35, 1, 2, 2, '2022-01-18', '17:00:00', 'Anulowano'),
+(36, 3, 4, 2, '2022-01-18', '18:00:00', 'Aktywne'),
+(37, 1, 5, 4, '2022-01-20', '17:30:00', 'Aktywne'),
+(38, 1, 4, 2, '2022-01-20', '14:30:00', 'Aktywne'),
+(39, 3, 3, 2, '2022-01-19', '16:30:00', 'Aktywne');
 
 -- --------------------------------------------------------
 
@@ -250,7 +253,7 @@ INSERT INTO `users` (`ID_os`, `Nazwisko`, `Imie`, `Mail`, `Telefon`, `Haslo`) VA
 (2, 'Kowalski', 'Zbyszek', 'zbyszek@wp.pl', '123321123', '12345678'),
 (3, 'Janek', 'Jan', 'jan@jan.pl', '123123123', '12345678'),
 (4, 'Moniuszko', 'Tadeusz', 'moniuszko@wp.pl', '123123123', '123123123'),
-(5, 'Jarki', 'Piotr', 'pj@wp.pl', '883222334', '123123123');
+(5, 'Jarki', 'Piotr', 'pj@wp.pl', '883222334', 'test12345');
 
 -- --------------------------------------------------------
 
@@ -346,31 +349,31 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT dla tabeli `Archive`
 --
 ALTER TABLE `Archive`
-  MODIFY `ID_arch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID_arch` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT dla tabeli `Calendar`
 --
 ALTER TABLE `Calendar`
-  MODIFY `ID_cal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `ID_cal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT dla tabeli `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `ID_emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `Opinions`
 --
 ALTER TABLE `Opinions`
-  MODIFY `ID_opini` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID_opini` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT dla tabeli `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `ID_reservation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `ID_reservation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`

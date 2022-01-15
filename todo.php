@@ -19,8 +19,11 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
   header( 'Location: admin.php' );
   exit();
 }
+    $ID_os = $_SESSION[ 'ID_os' ];
 
 
+
+  
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +57,25 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./js/menu/script.js"></script>
 <div class="container_AD">
   <h2 class="infoT"> Platforma Pracownicza</h2>
+	
+	
   <div id="admin_cont">
+	  <div class="del_res">
+
+	  <form  method="post" action="del_res.php" id="del_res">
+		   <h4> Anuluj wizytę </h4>
+		  <h6>ID wizyty</h6>
+		  <input type="number" name="form_id_wiz" required>
+		  <br>
+		   <br>
+		  <input type="checkbox" required>
+		 
+		  <p> Potwierdzenie anulowania</p>
+		   <button type="submit" class="button button-dark" >Anuluj</button>
+	  </form>
+	   </div>
+	  
+	  <div class="todo_cal"> 
     <form  method="post" id="date_form">
       <label for="date_select">
       <h4> Sprawdź swój grafik</h4>
@@ -66,7 +87,10 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
     <br>
     <?php
     require_once "connect.php";
-    $ID_os = $_SESSION[ 'ID_os' ];
+
+	  
+	  
+	  
 
     $date_select = $_POST[ 'date_select' ];
     echo( "<br>" );
@@ -81,7 +105,7 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
         throw new Exception( mysqli_connect_errno() );
       } else {
 
-        $wyswietl = $polaczenie->query( "SELECT Data, Godzina, Usluga, Imie FROM reservation INNER JOIN uslugi ON reservation.ID_uslugi = uslugi.ID_uslugi INNER JOIN users ON reservation.ID_os = users.ID_os WHERE Data = '$date_select' AND ID_emp='$ID_os'  ORDER BY Godzina ASC  " );
+        $wyswietl = $polaczenie->query( "SELECT ID_reservation Data, Godzina, Usluga, Imie, Status FROM reservation INNER JOIN uslugi ON reservation.ID_uslugi = uslugi.ID_uslugi INNER JOIN users ON reservation.ID_os = users.ID_os WHERE Data = '$date_select' AND ID_emp='$ID_os'  ORDER BY Godzina ASC  " );
         if ( !$wyswietl ) throw new Exception( $polaczenie->error );
 
         else {
@@ -92,7 +116,7 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
 
             echo( "<tr>" );
 
-            echo( " <th> " );
+            echo( " <th> ID:  " );
             echo( $row[ 0 ] );
 
             echo( " </th> " );
@@ -102,9 +126,18 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
             echo( " <th> " );
             echo( $row[ 2 ] );
             echo( " </th> " );
+			    echo( " <th> " );
+            echo( $row[ 3 ] );
+            echo( " </th> " );
+			  
             echo( " <th> " );
 
-            echo( $row[ 3 ] );
+            echo( $row[ 4 ] );
+
+            echo( " </th> " );
+			  echo( " <th> " );
+
+            echo( $row[ 5 ] );
 
             echo( " </th> " );
             echo( " </tr> " );
@@ -125,6 +158,7 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
     ?>
   </div>
 </div>
+	
 <div style="clear: both"></div>
 
 <!-- Stopka  -->

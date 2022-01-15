@@ -57,7 +57,9 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
       <li> <a href="logout.php">Wyloguj</a></li>
       <li><a href="user.php">Moje konto</a>
         <ul>
+		  <li><a href='arch.php'>Archiwum</a></li>
           <li><a href='password_change.php'>Zmień hasło</a></li>
+         
         </ul>
       </li>
       <li><a href="#price_listA">Cennik</a></li>
