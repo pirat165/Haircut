@@ -36,6 +36,7 @@ body {
   color: #7F8C8D;
   line-height: 1.7;
   height: 100%;
+	
 }
 p {
   margin-top: 6px;
@@ -365,24 +366,18 @@ a {
   text-align: center;
   padding-bottom: 2%;
 }
-.usr_anul_wiz {
-	
-  float: left;
-  max-width: 30%;
-  
-  margin-left: 15%;
-}
 
-.usr_anul_wiz h6
+
+
+
+.container_usr
 {
-  margin-top: 15%;
-}
-
-
-.akt_info
-{
-	float: left;
-	 margin-left: 5%;
+	max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto !important;
+  min-height: 100%;
+  margin-top: 100px;
 }
 
 
@@ -639,4 +634,56 @@ Mobile */
 }
 #row_price {
   padding-bottom: 2%;
+}
+
+/* popup user */
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 10%; /* Location of the box */
+  left: 0;
+  top: 0;
+	margin-left: auto;
+	margin-right: auto;
+  
+  height: 30%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin-left: auto;
+	margin-right: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 30%;
+	text-align: center;
+}
+
+/* The Close Button */
+.close {
+	text-align: right;
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 760px) {
+  .modal-content {
+     max-width: 70%;
+  }
 }

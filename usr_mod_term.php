@@ -7,7 +7,8 @@ $id_osoby = $_SESSION[ 'ID_os' ];
 
 	  $form_id_wiz = $_POST['form_id_wiz'];
 	  $aktData = date("Y-m-d");
-
+     $time = $_POST[ 'time' ];
+$date = $_POST[ 'date' ];
 
 
 
@@ -29,13 +30,17 @@ require_once "connect.php";
 		{ 
 
 		  
+$howdy = $polaczenie->query( "SELECT * FROM Calendar WHERE Data='$date' AND Godzina='$time' " );
+    $ile_howdy = $howdy->num_rows;
+    if ( $ile_howdy == 1 ) {
 
-        $del_res = $polaczenie->query( "UPDATE reservation  SET Status = 'Anulowano' WHERE ID_reservation = '$form_id_wiz' " );
-        $up_cal = $polaczenie->query( "INSERT INTO Calendar (Data, Godzina) SELECT Data, Godzina FROM reservation WHERE reservation.ID_reservation = '$form_id_wiz' " );
+        $del_cal = $polaczenie->query( "DELETE FROM Calendar WHERE Godzina='$time' AND Data='$date'" );
+        $mod_res = $polaczenie->query( "UPDATE reservation  SET Data='$date', Godzina='$time' WHERE ID_reservation = '$form_id_wiz' " );
+
 
            echo( "<script>
 	
-		if (confirm('Anulowano wizytę')) {
+		if (confirm('Zmieniłeś termin wizyty na " . "dnia " . $date . " o godzinie " . $time . "')) {
   window.open('user.php', '_self');
 } else {
   window.open('user.php', '_self');
@@ -43,6 +48,7 @@ require_once "connect.php";
   
 		
 	</script>" );
+	}
 		
 		  //Mailing, będzie aktywny po zakupie serwera
 		
@@ -58,7 +64,23 @@ require_once "connect.php";
 		
 		*/
 		
-		   }
+		   
+		 else {
+			  
+			    echo( "<script>
+	
+		if (confirm('Wybrany termin " . "dnia " . $date . " o godzinie " . $time . " nie jest aktualny "."')) {
+  window.open('user.php', '_self');
+} else {
+  window.open('user.php', '_self');
+}
+  
+		
+	</script>" );
+			  
+		  }
+		 }
+		  
 		  if ($aktUsl = 0)
 		{ 
 	 echo("Brak aktualnych rezerwacji");

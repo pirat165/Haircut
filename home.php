@@ -26,13 +26,20 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
 <html>
 <head>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Barber shop</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+	
 <link rel="stylesheet" href="style/style.css">
 <link href="css/bootstrap-4.3.1.css" rel="stylesheet">
+
+
 <link href="https://fonts.googleapis.com/css?family=Lato:700,900&display=swap" rel="stylesheet">
+	
 <link href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 <script>
 		function prom()
 			{
@@ -42,7 +49,7 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
 		</script>
 </head>
 <body>
-
+	
 <!-- Naglowek strony -->
 <div class="menu-container">
   <div class="menu">
@@ -69,7 +76,6 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
     </ul>
   </div>
 </div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./js/menu/script.js"></script> 
 
 <!-- Banner -->
 <section class="banner">
@@ -107,24 +113,31 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
     </div>
   </section>
   
-  <!-- Automatyczna galeria -->
-  
-  <div id="gall_cont">
-    <div class="homepage-hero-slider gallery">
-      <div class="photos">
-        <div class="slide block active" style="background: url(https://images.unsplash.com/photo-1532775946639-ebb276eb9a1c?ixlib=rb-0.3.5&s=b821fc70ae641c5af2bfa331ea90f17c&auto=format&fit=crop&w=1500&q=80) no-repeat center center; background-size: cover;"></div>
-        <div class="slide block" style="background: url(https://images.unsplash.com/photo-1596728325488-58c87691e9af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80) no-repeat center center; background-size: cover;"></div>
-        <div class="slide block" style="background: url(https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80) no-repeat center center; background-size: cover;"></div>
-        <div class="slide block" style="background: url(https://images.unsplash.com/photo-1622288432450-277d0fef5ed6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80) no-repeat center center; background-size: cover;"></div>
-      </div>
-      <div class="buttons"> <a class="prev" href="#"><i class="fas fa-fw fa-arrow-left"></i></a> <a class="next" href="#"><i class="fas fa-fw fa-arrow-right"></i></a> </div>
+  <!-- Automatyczna galeria - Bootstrap Carousel -->
+	
+	<div id="carouselExampleControls" class="carousel slide carousel-fade " data-bs-wrap="true" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://images.unsplash.com/photo-1622288432450-277d0fef5ed6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="zdj1">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80" class="d-block w-100" alt="zdj2">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="zdj3">
     </div>
   </div>
-  
-  <!-- partial --> 
-  <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script><script  src="./gall_js/script.js"></script> 
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Poprzednie</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Następne</span>
+  </button>
 </div>
-
+	
+	
 <!--Promocje  -->
 
 <section class="promocje" id="promo">
@@ -232,9 +245,9 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
     ?>
   </div>
 </section>
-<div class="container">
-  <h2>Ankieta na temat usługi</h2>
-  <div class="col-half" >
+<div class="container center-text bg-light" style="padding-bottom: 8%; padding-top: 3%;">
+  <h2 style="padding-bottom: 5%;">Ankieta na temat usługi</h2>
+  <div class="col" >
     <form action="skrypt_opinie.php" method="post" >
       <br>
       <label for="ocena"><strong> Ocena </strong></label>
@@ -272,5 +285,17 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
 <footer class="site-footer">
   <p>&copy; 2022 Barber </p>
 </footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.js" integrity="sha256-htsAUOIgN8xkootpQUzmvaCbQo6x2PNMTD7kLWI6yYQ=" crossorigin="anonymous"></script>
+	<script src="js/bootstrap-4.3.1.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+
+	<script src="js/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./js/menu/script.js"></script>
+	
 </body>
 </html>

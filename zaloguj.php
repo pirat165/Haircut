@@ -58,7 +58,12 @@ if ( $polaczenie->connect_errno != 0 ) {
 
     } else {
 
-      $_SESSION[ 'blad' ] = '<span style="color:red">Nieprawidłowy login lub hasło!</span>';
+      $_SESSION[ 'blad' ] = "<script>
+	
+		alert('Nieprawidłowy login lub hasło!');
+  
+		
+	</script>"; 
       header( 'Location: index.php' );
 
     }
@@ -134,6 +139,8 @@ if ( $polaczenie->connect_errno != 0 ) {
 				
 				*/
   }
+
+
   $polaczenie->close();
 }
 

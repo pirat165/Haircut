@@ -74,7 +74,7 @@ $id_osoby = $_SESSION[ 'ID_os' ];
   <div id="container_cal">
     <form method="post" id="date_form">
       <input type="date" name="date_select">
-      <button type="submit" class="button button-dark" >Sprawdź termin</button>
+      <button type="submit" class="button button-dark bg-primary" >Sprawdź termin</button>
     </form>
     <?php
     require_once "connect.php";
@@ -181,8 +181,8 @@ $id_osoby = $_SESSION[ 'ID_os' ];
       <br>
       <br>
       <br>
-      <input type='submit' value='Umów się' />
-      <input type="reset" value="Wyczyść formularz">
+      <input type='submit' value='Umów się' class='button button-dark'/>
+      <input type="reset" value="Wyczyść formularz" class='button button-dark bg-secondary'>
     </form>
   </div>
   <div style="clear:both"></div>

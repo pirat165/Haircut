@@ -26,7 +26,7 @@ try {
     $ile_howdy = $howdy->num_rows;
     if ( $ile_howdy == 1 ) {
 
-      $polaczenie->multi_query( " DELETE FROM Calendar WHERE Godzina='$time'; INSERT INTO reservation VALUES (NULL, '$usluga', '$id_osoby', '$pracownik', '$date', '$time', 'Aktywne'); INSERT INTO Archive VALUES (NULL, '$date', '$time', '$pracownik');" ); // OK
+      $polaczenie->multi_query( " DELETE FROM Calendar WHERE Godzina='$time' AND Data='$date'; INSERT INTO reservation VALUES (NULL, '$usluga', '$id_osoby', '$pracownik', '$date', '$time', 'Aktywne'); INSERT INTO Archive VALUES (NULL, '$date', '$time', '$pracownik');" ); // OK
       while ( $polaczenie->next_result() ) {;
       }
 

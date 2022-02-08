@@ -95,21 +95,25 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
       throw new Exception( mysqli_connect_errno() );
     } else {
 
-      $wyswietl = $polaczenie->query( "SELECT Usluga, Data, Godzina FROM reservation INNER JOIN uslugi ON reservation.ID_uslugi = uslugi.ID_uslugi WHERE ID_os='$_SESSION[ID_os]'" );
+      $wyswietl = $polaczenie->query( "SELECT ID_reservation ,Usluga, Data, Godzina FROM reservation INNER JOIN uslugi ON reservation.ID_uslugi = uslugi.ID_uslugi WHERE ID_os='$_SESSION[ID_os]'" );
       if ( !$wyswietl ) throw new Exception( $polaczenie->error );
 
       else {
 
         while ( $row = mysqli_fetch_row( $wyswietl ) ) {
-          echo( "<hr class='my-4'> <p>Usługa: " );
+          echo( "<hr class='my-4'> <p>ID: " );
           echo( $row[ 0 ] );
+			
+		  echo( "    Usługa: " );
+          echo( $row[ 1 ] );
 
           echo( "    Data:  " );
-          echo( "$row[1]" );
+          echo( "$row[2]" );
 
           echo( "    Godzina:  " );
 
-          echo( $row[ 2 ] );
+          echo( $row[ 3 ] );
+			
           echo( "</p></hr>" );
 
         }

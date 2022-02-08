@@ -81,8 +81,139 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
 	
 	
 	<div class="container"> 
+	<div class="row"> 
+		
+
+		
+		<div class="col-sm-4"> 
+<div>
+   
+<!-- Trigger/Open The Modal -->
+<button id="myBtn" class="myBtn_multi button button-dark bg-danger">Anuluj wizytę </button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal modal_multi">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close close_multi">&times;</span>
+    <form  method="post" action="usr_del_res.php">
+		   <h3>Anuluj wizytę  </h3>
+		  <h6>ID wizyty</h6>
+		  <input type="number" name="form_id_wiz" id="input_id" required>
+		  <br>
+		
+		  <input type="checkbox" required>
+		 
+		  <p> Potwierdzenie anulowania</p>
+		   <button type="submit" class="button button-dark bg-danger" >Anuluj</button>
+	  </form>
+  </div>
+
+</div>
+
+</div>
+
+		<div>
+			
+<!-- Trigger/Open The Modal -->
+<button id="myBtn"  class="myBtn_multi button button-dark bg-secondary">Zmień rodzaj wizyty  </button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal modal_multi">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close close_multi">&times;</span>           
+
+    <form action='usr_mod_wiz.php' method='post'>
+       <h3> Zmień rodzaj wizyty </h3>
+				  <h6>ID wizyty</h6>
+				  <input type="number" name="form_id_wiz" required>
+				 <br>
+        <label>
+          <input type="radio" name="uslugi" value="1" id="uslugi_0" required>
+          Strzyżenie</label>
+        <br>
+        <label>
+          <input type="radio" name="uslugi" value="2" id="uslugi_1" required>
+          Strzyżenie brody</label>
+        <br>
+        <label>
+          <input type="radio" name="uslugi" value="3" id="uslugi_2" required>
+          Strzyżenie maszynką</label>
+        <br>
+        <label>
+          <input type="radio" name="uslugi" value="4" id="uslugi_3" required>
+          Golenie </label>
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="uslugi" value="5" id="uslugi_4" required>
+          Farbowanie </label>
+        <br>
+       
+      <input type='submit' class="button button-dark" value='Zmień' />
+    </form>
+			
+  </div>
+
+</div>
+		
+</div>
+
+		
 	
-<div class="akt_info">
+	<div>
+   
+<!-- Trigger/Open The Modal -->
+<button id="myBtn" class="myBtn_multi button button-dark bg-secondary">Zmień termin wizyty </button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal modal_multi">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close close_multi">&times;</span>
+    <form  method="post" action="usr_mod_term.php">
+		   <h3>Zmień termin wizyty</h3>
+		  <h6>ID wizyty</h6>
+		  <input type="number" name="form_id_wiz" required>
+		  <br>
+		 <input type="date" name="date">
+        <select name="time" id="godzina_select" required>
+          <option value="">--Wybierz godzinę-</option>
+          <option value="09:00:00">09:00</option>
+          <option value="09:30:00">09:30</option>
+          <option value="10:00:00">10:00</option>
+          <option value="10:30:00">10:30</option>
+          <option value="11:00:00">11:00</option>
+          <option value="11:30:00">11:30</option>
+          <option value="12:00:00">12:00</option>
+          <option value="12:30:00">12:30</option>
+          <option value="13:00:00">13:00</option>
+          <option value="13:30:00">13:30</option>
+          <option value="14:00:00">14:00</option>
+          <option value="14:30:00">14:30</option>
+          <option value="15:00:00">15:00</option>
+          <option value="15:30:00">15:30</option>
+          <option value="16:00:00">16:00</option>
+          <option value="16:30:00">16:30</option>
+          <option value="17:00:00">17:00</option>
+          <option value="17:30:00">17:30</option>
+          <option value="18:00:00">18:00</option>
+          <option value="18:30:00">18:30</option>
+        </select>
+		   <button type="submit" class="button button-dark" >Zmień termin</button>
+	  </form>
+  </div>
+
+</div>
+
+</div>
+	
+	</div>
+		<div class="col-sm-8">
   <h3>Twoje aktualne wizyty:</h3>
   <?php
   date_default_timezone_set( "Poland" );
@@ -133,25 +264,72 @@ if ( ( !isset( $_SESSION[ 'zalogowany' ] ) ) && ( $_SESSION[ 'zalogowany' ] == f
 
   ?>
 </div>
-<div class="usr_anul_wiz">
-   
-
-	  <form  method="post" action="usr_del_res.php" id="del_res">
-		   <h3> Anuluj wizytę </h3>
-		  <h6>ID wizyty</h6>
-		  <input type="number" name="form_id_wiz" required>
-		  <br>
-		   <br>
-		  <input type="checkbox" required>
-		 
-		  <p> Potwierdzenie anulowania</p>
-		   <button type="submit" class="button button-dark" >Anuluj</button>
-	  </form>
-	 
-</div>
-		</div>
+	</div>
+	</div>
 <div style="clear: both"></div>
+	
+		<script>
 
+      
+        var modalparent = document.getElementsByClassName("modal_multi");
+
+        // Get the button that opens the modal
+
+        var modal_btn_multi = document.getElementsByClassName("myBtn_multi");
+
+        // Get the <span> element that closes the modal
+        var span_close_multi = document.getElementsByClassName("close_multi");
+
+        // When the user clicks the button, open the modal
+        function setDataIndex() {
+
+            for (i = 0; i < modal_btn_multi.length; i++)
+            {
+                modal_btn_multi[i].setAttribute('data-index', i);
+                modalparent[i].setAttribute('data-index', i);
+                span_close_multi[i].setAttribute('data-index', i);
+            }
+        }
+
+
+
+        for (i = 0; i < modal_btn_multi.length; i++)
+        {
+            modal_btn_multi[i].onclick = function() {
+                var ElementIndex = this.getAttribute('data-index');
+                modalparent[ElementIndex].style.display = "block";
+            };
+
+            // When the user clicks on <span> (x), close the modal
+            span_close_multi[i].onclick = function() {
+                var ElementIndex = this.getAttribute('data-index');
+                modalparent[ElementIndex].style.display = "none";
+            };
+
+        }
+
+        window.onload = function() {
+
+            setDataIndex();
+        };
+
+        window.onclick = function(event) {
+            if (event.target === modalparent[event.target.getAttribute('data-index')]) {
+                modalparent[event.target.getAttribute('data-index')].style.display = "none";
+            }
+
+            // OLD CODE
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+
+
+
+
+</script>
+		
 <!-- Stopka  -->
 <footer class="site-footer" style="margin-top: 16%;">
   <p>&copy; 2022 Barber </p>
